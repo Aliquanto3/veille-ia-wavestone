@@ -1,0 +1,183 @@
+# TECH
+
+#############
+## Modèles ##
+#############
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Modèles
+**TITRE :** Nemotron 3, famille de modèles open source par NVIDIA
+**DESCRIPTION :** NVIDIA développe trois versions (Nano, Super et Ultra) de sa nouvelle famille de LLM Nemotron 3, basée sur une architecture MoE : 
+- Nano : 30B paramètres / 3B paramètres actifs
+- Super : 100B / 10B
+- Ultra : 500B / 50B
+Seule la version Nano est disponible pour l'instant, mais ses performances sur les benchmarks généraux sont vraiment exceptionnelles pour un modèle de cette taille. En plus, seulement 3B paramètres actifs, ça signifie qu'on peut faire fonctionner le modèle en local sur de nombreux PC assez facilement ! Hâte de voir les performances des modèles plus grands.
+De plus, le modèle est vraiment open source : en effet, même les jeux de données sont disponibles ! 
+**SOURCES :**
+- https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models
+- https://developer.nvidia.com/blog/inside-nvidia-nemotron-3-techniques-tools-and-data-that-make-it-efficient-and-accurate/
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Modèles
+**TITRE :** OpenPhone, 3B pour fonctionner on device
+**DESCRIPTION :** De multiples SLM ont été développés pour les PC ou les serveurs. Mais pour l'agentique hébergée sur les téléphones, pouvant potentiellement manipuler le téléphone même, il n'existait pas encore de modèle spécialisé. C'est dorénavant le cas avec le modèle open source OpenPhone de 3B paramètres ! 
+**SOURCES :** 
+- https://www.linkedin.com/posts/mastering-llm-large-language-model_ai-repo-openphone-a-tiny-ai-agent-that-activity-7408558671439523840-Vcr2?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://github.com/HKUDS/OpenPhone
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Modèles
+**TITRE :** Qwen-Image-Layered, la décomposition d'images en couches pour l'édition
+**DESCRIPTION :** Avez-vous déjà fait du dessin, de l'édition photo ou de l'infographie sur un ordinateur ou une tablette ? Si c'est le cas, vous êtes probablement familiers du concept des "calques" : votre image complète est en fait constituée de plusieurs couches différentes qui sont superposées. Qwen-Image-Layered vous propose de prendre une image initiale et de la décomposer ainsi en un nombre de calques au choix, et d'éditer ainsi uniquement certaines parties du calque sans risquer d'impacter le reste de l'image. Une avancée fantastique pour l'édition d'images, que ce soit pour l'édition majoritairement manuelle ou entièrement par LLM.
+**SOURCES :**
+- https://qwen.ai/blog?id=qwen-image-layered
+- https://github.com/QwenLM/Qwen-Image-Layered
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Modèles
+**TITRE :** Le gros MiniMax M2.1 ou ou le petit IQuest-Coder-V1 pour coder en open weight ?
+**DESCRIPTION :** Besoin d'un modèle de code open weight, qui soit au passage plus performant que Claude Sonnet 4.5, GPT 5.2 ou Gemini 3 Pro ? MiniMax 2.1 bat ces modèles propriétaires sur presque tous les benchmarks de code, tout en coûtant 10 fois moins cher que Claude Sonnet 4.5 ! Disponible sur HuggingFace (donc aisément déployable ailleurs). Le modèle sert même pour de l'agentique, avec un fonctionnement extrêmement similaire à l'API Anthropic, pouvant donc être remplacé en un instant dans tout code appelant cette API. 
+Cependant, à quelques heures de sa sortie, IQuest-Coder-V1 est aussi arrivé sur HuggingFace. Avec 40B paramètres (contre 228B pour M2.1 - il n'a que 10B paramètres actifs grâce à son architecture MoE cela dit), ce modèle un tout petit peu plus bas dans les benchmarks mais tout de même extrêmement proche de Claude Sonnet 4.5 est une alternative encore moins coûteuse et plus frugale. 
+**SOURCES :**
+- https://www.minimax.io/news/minimax-m21
+- https://www.linkedin.com/posts/alvarobartt_be-like-minimax-release-minimaxm21-activity-7411445000934227968-lxFn?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.linkedin.com/posts/niels-rogge-a3b7a3127_best-christmas-holiday-drop-on-hugging-activity-7411406268260823040-vAYv?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://huggingface.co/IQuestLab/IQuest-Coder-V1-40B-Instruct
+- https://huggingface.co/MiniMaxAI/MiniMax-M2.1
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Modèles
+**TITRE :** GLM-4.7, nouveau titan des LLM open weight, au niveau général de Claude Sonnet 4.5... mais pas d'Opus
+**DESCRIPTION :** Ce 22 décembre, Z.ai reprend le lead parmi les LLM généralistes open weight. Avec 358B paramètres, GLM-4.7 est plutôt gros. Cependant, il titille Claude Sonnet 4.5 et Gemini 3.0 sur quelques benchmarks, en particulier sur le code, les mathématiques et l'agentique où il réussit à remporter la palme sur quelques benchmarks. Sur le code en particulier, il a une spécialité où il excelle : les applications mêlant plusieurs langages de programmation. 
+Sur l'agrégrateur de benchmarks, Artificial Analysis Intelligence Index, il dépasse tous les autres modèles open weight (dont le fameux Kimi K2 Thinking ou DeepSeek V3.2). 
+Sur LMArena, le benchmark évaluant la tendance des utilisateurs à apprécier les réponses reçues, il est uniquement dépassé par Ernie 5.0 Preview, un modèle qui n'est pas encore disponible sur HuggingFace (encore à la version 4.5) et qui est significativement en-dessous sur l'AAII. 
+Cependant, depuis les avancées de Gemini 3 (puis GPT-5.2 et Claude Opus 4.5 sortis en réponse), les modèles propriétaires ont de nouveau une avance significative sur les modèles open weight, dont les meilleurs comme GLM-4.7 atteignent au mieux un Claude Sonnet 4.5 (qui était déjà exceptionnel il y a quelques mois).
+**SOURCES :**
+- https://z.ai/blog/glm-4.7
+- https://huggingface.co/zai-org/GLM-4.7
+- https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index
+- https://lmarena.ai/leaderboard/text
+
+###############
+## Providers ##
+###############
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Providers
+**TITRE :** GOOGLE - La review IA 2025 de Google est sortie
+**DESCRIPTION :** Google a publié des dizaines de modèles cette année ! Retrouvez les dans la compilation en source avec les liens adaptés. Aviez-vous aussi suivi les modèles de recherche scientifiques, de météo, de robotique ?
+**SOURCES :**
+- https://www.linkedin.com/posts/nemri_google-ai-2025-a-year-in-review-core-ai-activity-7409635273162035200-yuLH?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Providers
+**TITRE :** OPENAI - Les "Apps" sont disponibles dans ChatGPT
+**DESCRIPTION :** Photoshop, Canva, TripAdvisor, Spotify, Lovable, Gmail, SharePoint, Zoom… Des dizaines d'applications sont dorénavant utilisables directement depuis l'interface ChatGPT ! Et le nombre ne fait qu'augmenter, car dorénavant il est possible de publier des applications dans le portail OpenAI. Vous pouvez même utiliser Stripe pour les monétiser...
+**SOURCES :**
+- https://chatgpt.com/apps
+- https://www.linkedin.com/posts/charlywargnier_wow-stripe-just-made-it-insanely-easy-to-activity-7407793275115556865-s64o?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.linkedin.com/posts/eordax_ai-devs-build-activity-7409221676170854400-unPk?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://blog.adobe.com/en/publish/2025/12/10/edit-photoshop-chatgpt
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Providers
+**TITRE :** MICROSOFT - GPT-Image-1.5 arrive dans M365 Copilot
+**DESCRIPTION :** Entre mi-décembre et fin janvier, GPT-4o va être entièrement remplacé par GPT-Image-1.5 dans M365 Copilot. Pour les utilisateurs sans licence, l'accès sera soumis à la capacité disponible au moment de la requête.
+**SOURCES :**
+- https://www.linkedin.com/posts/elliottpierret_copilot-microsoft-microsoftcopilot-activity-7408798650404925440-OiAi?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Providers
+**TITRE :** MICROSOFT - Copilot Studio peut filtrer les sources de connaissances via les métadonnées
+**DESCRIPTION :** L'intégration de connaissances à un agent Copilot Studio via le lien d'un dossier SharePoint est assez classique. Dorénavant, il est même possible d'ajouter des filtres pour sélectionner les documents à intégrer.
+**SOURCES :**
+- https://www.linkedin.com/posts/romaingerard_copilotstudio-sharepoint-microsoft-activity-7408789032886976512-hESG?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Providers
+**TITRE :** MICROSOFT - Copilot Studio intègre une option "Human in the loop"
+**DESCRIPTION :** Les workflows de Copilot Studio (et/ou de Power Automate ?) permettent maintenant de s'interrompre pour demander une validation humaine grâce à la fonctionnalité d'IA "Human in the loop".
+**SOURCES :**
+- https://www.linkedin.com/posts/romaingerard_microsoft-copilotstudio-powerplatform-activity-7409510695047675905-QAPx?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Providers
+**TITRE :** MICROSOFT - AI Views : Copilot Chat affiche une preview des documents
+**DESCRIPTION :** Vous faites des recherches de document sur SharePoint mais vous n'avez pas envie d'ouvrir tous les documents qui sont renvoyés pour vérifier s'ils ont le bon contenu ? AI Views permet dorénavant d'avoir une synthèse et de voir des extraits des documents récupérés.
+**SOURCES :**
+- https://www.linkedin.com/posts/coraliesimonaire_microsoft365copilot-microsoft365-microsoftcopilot-activity-7408778430021984256-0F7k?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+###################
+## Développement ##
+###################
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Développement
+**TITRE :** Les "Agent Skills" sont dorénavant disponibles dans GitHub Copilot
+**DESCRIPTION :** Que ce soit en ligne de commande ou dans VS Code, GitHub Copilot supporte dorénavant les "Agent Skills", initialement développés par Anthropic, qui permettent aux LLM de chercher eux-mêmes les instructions dont ils ont besoin pour une tâche donnée.
+**SOURCES :**
+- https://www.linkedin.com/posts/philippelimantour_github-anthropicsskills-public-repository-activity-7408458085511409665-RKf8?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills/
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Développement
+**TITRE :** Les plus grands développeurs d'OpenAI et Anthropic sont dépassés par les LLM pour le code
+**DESCRIPTION :** Un des plus grands esprits de l'IA, fondateur d'OpenAI ? Le créateur de Claude Code d'Anthropic ? "I've never felt this much behind as a programmer." Les LLM, les assistants IA, le vibe coding, le codage agentique… le métier de développeur est en train de radicalement évoluer et même parmi les meilleurs développeurs du monde le sentiment global est qu'il est terriblement difficile de travailler de la meilleure façon possible. Ils estiment qu'il faut plus que jamais se remettre en question, avoir un esprit critique et ouvert pour envisager des approches radicalement différentes ce qu'ils faisaient par le passé.
+**SOURCES :**
+- https://x.com/bcherny/status/2004626064187031831
+- https://www.linkedin.com/posts/andreashorn1_%F0%9D%97%A7%F0%9D%97%B5%F0%9D%97%B2-%F0%9D%97%AF%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81-%F0%9D%97%BD%F0%9D%97%BF%F0%9D%97%BC%F0%9D%97%B4%F0%9D%97%BF%F0%9D%97%AE%F0%9D%97%BA%F0%9D%97%BA%F0%9D%97%B2%F0%9D%97%BF%F0%9D%98%80-%F0%9D%97%B6-activity-7410977088985374721-9ko6?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Développement
+**TITRE :** Maîtrisez la génération de vos vidéos avec des figurines
+**DESCRIPTION :** Envie de générer des vidéos, mais en leur faisant suivre une mise en forme particulière ? Dans ce tutoriel de 10 minutes, découvrez comment remplacer des figurines que vous déplacez à l'écran par des versions animées ou comment rajeunir quelqu'un à l'écran.
+**SOURCES :**
+- https://www.youtube.com/watch?v=pUb58eAZ3pc
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Développement
+**TITRE :** DORA 2025, le rapport annuel sur les développeurs par Google
+**DESCRIPTION :** Google vient de publier la 11e édition de son rapport annuel DORA. Non, pas sur la résilience opérationnelle ! DORA, c'est pour DevOps Research and Assessment. De multiples conclusions et chiffres se trouvent dans le rapport, dont en voici une poignée. Aujourd'hui, 90% des développeurs ont adopté l'IA, en faisant la technologie au taux d'adoption le plus rapide de l'histoire. Cependant, cette technologie change le métier. Auparavant, il y avait un certain équilibre entre les phases de rédaction et de relecture de code. Aujourd'hui, la majeure partie du temps humain est dorénavant dédiée à la phase de relecture, ce qui est maintenant le principal point d'engorgement dans le développement. De plus, tout comme l'IA a mis en lumière les faiblesses côté Data dans les entreprises, elle révèle particulièrement les manquements dans les bases de la CI/CD, comme l'automatisation de tests, qui est nécessaire pour que l'IA apporte véritablement des gains de productivité aux équipes. En complément, le rapport vous présente des métriques sur l'efficacité des équipes, comment ils ont évolué, 7 archétypes d'équipes de développement et les cas d'usage principaux de l'IA pour les développeurs (aujourd'hui encore plutôt relégué à l'assistant de codage plutôt qu'à un partenaire de réflexion de haut niveau).
+**SOURCES :** 
+- https://www.linkedin.com/posts/didiergirard_lere-de-lamplification-activity-7408774589108989952-80p3?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://dora.dev/research/
+- https://www.scrum.org/resources/blog/dora-report-2025-summary-state-ai-assisted-software-development
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Développement
+**TITRE :** Nouveaux guides Google gratuits pour les managers de développeurs et les développeurs même 
+**DESCRIPTION :** Addy Osmani, directeur au sein de Google Cloud AI, a publié un livre gratuit de 180 pages sur le Software Engineering Management, présentant les phases d'onboarding, faire évoluer ses équipes, gérer les situations de conflit, prioriser la vitesse de déploiement par rapport à la dette technique…  
+De plus, il a également partagé sa méthodologie pour le développement assisté par IA : rédiger d'abord les spécifications, sélectionner le bon niveau de détail à faire modifier par l'IA à la fois, encore plus se servir des commits pour revenir en arrière en cas d'hallucination… et bien sûr relire les résultats !
+**SOURCES :**
+- https://www.linkedin.com/posts/addyosmani_engineeringmanager-programming-softwareengineering-activity-7408046152845029376-8la0?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7407683628396298240-G0hd?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://addyo.substack.com/p/my-llm-coding-workflow-going-into
+- https://leanpub.com/effective-software-engineering-management/signup
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Développement
+**TITRE :** Comment le créateur de Claude Code utilise sa création
+**DESCRIPTION :** Boris Cherny est la personne qui a créé Claude Code, un des outils les plus importants du monde du codage agentique. Il vient de présenter la manière dont il s'en sert dorénavant dans son terminal, de manière somme toute assez "vanilla" selon ses dires. Il donne aussi des tips sur la manière de travailler dans une équipe disposant de cet outil, comment il paramètre les capacités et limitations… pour finir par des blagues sur le fait qu'il travaille en light mode !
+**SOURCES :**
+- https://x.com/bcherny/status/2007179832300581177
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Développement
+**TITRE :** Vibe Kanban, devenir un véritable chef de projet pour les agents de code
+**DESCRIPTION :** Gemini CLI, GPT Codex, Claude Code… des agents de génération de code très efficaces, dont on peut ouvrir plusieurs instances en parallèle. Au point maintenant qu'il faudrait pouvoir suivre leurs avancées respectives ! Là où Boris Cherny (le créateur de Claude Code) a juste plusieurs onglets ouverts, Vibe Kanban propose de se transformer intégralement en chef de projet, avec nos agents IA qui mettent à jour au fur et à mesure leurs avancées sur un tableau Kanban où l'utilisateur décrit les tâches à réaliser et peut éventuellement les valider.
+**SOURCES :**
+- https://www.linkedin.com/posts/loverdeolivier_vibe-kanban-d%C3%A9cupler-la-puissance-de-claude-activity-7414194831184551936-FCNO?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://github.com/BloopAI/vibe-kanban
+- https://www.youtube.com/watch?v=TFT3KnZOOAk&feature=youtu.be
+
+###############
+## Robotique ##
+###############
+
+**CATEGORIE :** Tech
+**SOUS-CATEGORIE :** Robotique 
+**TITRE :** Le robot artiste martial patrouille maintenant avec la police chinoise
+**DESCRIPTION :** Après les démonstrations montées comme des films d'actionset et le coup de pied projetant le directeur de l'entreprise au sol, le T800 est maintenant filmé dans des lieux touristiques en menant des patrouilles de police. 
+**SOURCES :** 
+- https://www.linkedin.com/posts/evolving-ai_china-now-has-a-terminator-patrolling-with-activity-7412820287836295168-RPV4?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.youtube.com/watch?v=HuYpzGFEFj8

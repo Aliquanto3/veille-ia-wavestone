@@ -1,0 +1,150 @@
+# MARCHE
+
+##################
+## Souveraineté ##
+##################
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Souveraineté
+**TITRE :** Un deepfake viral en Afrique annonce un coup d'état en France
+**DESCRIPTION :** Un Burkinabé de 17 ans cherchait à promouvoir ses cours de création de vidéo par IAG. Pour cela, il poste sur sa page Facebook de multiples deepfakes. L'un d'entre eux a cependant pris une ampleur inédite quand le lendemain matin il a atteint les 12 millions de vue. Emmanuel Macron a même reçu un appel d'un de ses confrères africains pour lui demander si tout allait bien ! En effet, cette vidéo ayant fait le tour de réseaux africains annonçait un coup d'état réalisé par un colonel français. Son auteur, n'ayant pas du tout prévu une telle ampleur, a supprimé lui-même la vidéo… après que Meta ait refusé de supprimer la vidéo de sa plateforme quand M. Macron leur a demandé, car elle n'était pas contraire aux règles de la plateforme…
+**SOURCES :** 
+- https://www.linkedin.com/posts/mszadkowski_emmanuel-macron-a-vivement-d%C3%A9nonc%C3%A9-une-vid%C3%A9o-activity-7407349456893018112-XwfZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.youtube.com/shorts/s8Spgv6pnT4
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Souveraineté
+**TITRE :** La Chine déploie son nouvel internet national, le CENI
+**DESCRIPTION :** Le "China Environment for Network Innovation" relie dorénavant 40 grandes villes chinoises. Il est annoncé comme ayant 5 à 10 ans d'avance sur les structures occidentales et serait jusqu'à 60% moins cher à opérer. Et les débits sont de pointe, avec des exemples de transferts allant de 100Gb à 1Tb/seconde ! Là où sur de la fibre grand public ou des liaisons pros on peut difficilement atteindre du 1 Gb à 10 Gb/s.
+Côté IA, il est déjà utilisé par Baidu et Huawei pour entraîner leurs modèles.
+**SOURCES :**
+- https://www.linkedin.com/posts/maxime-derian_chine-ceni-internet-activity-7408163740795179008-TnTr?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.theregister.com/2025/12/19/china_environment_for_network_innovation/
+- https://www.linkedin.com/posts/hkbnes_hkbn-fnii-ceni-activity-7364239605342093314-r25v?utm_source=share&utm_medium=member_android&rcm=ACoAAAm2ENkB1ngUIvut9FcvfRgxAqDOYlPqq7g&lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BUCuN60VBRmWrmwctMs3A5Q%3D%3D
+- https://www.linkedin.com/posts/ryad-jerjini-4371b41b_la-chine-coupe-le-cordon-son-nouvel-internet-activity-7408393822721814528-_ONr?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Souveraineté
+**TITRE :** Airbus veut migrer chez des clouders européens
+**DESCRIPTION :** Airbus s'apprête à passer un appel d'offres visant à migrer ses systèmes critiques en dehors des hyperscalers, chez des acteurs souverains. Mais ils ne sont pas certains de trouver chaussure à leur pied en Europe.
+**SOURCES :**
+- https://www.lesnumeriques.com/societe-numerique/airbus-lache-microsoft-et-cherche-desesperement-un-cloud-europeen-pour-proteger-ses-secrets-n248461.html
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Souveraineté
+**TITRE :** Consultation citoyenne sur l'avenir de l'IA
+**DESCRIPTION :** Jusqu'au 12 janvier, chaque citoyen français pourra rédiger des propositions pour un programme de travail autour de l'IA et du numérique. Cette consultation citoyenne a été lancée par le Conseil de l'intelligence artificielle et du numérique et est partagé entre autres par Anne Le Hénanff, ministre déléguée chargée de l'IA et du numérique.
+**SOURCES :** 
+- https://www.linkedin.com/posts/anne-le-h%C3%A9nanff-7505a26b_lavenir-de-lia-et-du-num%C3%A9rique-ne-peut-activity-7408774613838692352-QNmt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+
+#########
+## M&A ##
+#########
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** M&A
+**TITRE :** NVIDIA rachète Groq
+**DESCRIPTION :** On ne présente plus NVIDIA, entreprise à la plus haute capitalisation en bourse du monde et plus grand constructeur de GPU. Peut-être que vous aviez raté l'existence de Groq cependant : ce provider d'API de LLM et fabricant de puces LPU (Language Processing Unit) se targue d'être le plus rapide du marché. En effet, via une architecture alternative des puces ils gagnent une grosse capacité d'exécution (au détriment du prix qui augmente). Aussi, non content de produire des GPU, NVIDIA récupère aussi la mainmise sur ces fameux LPU dans un deal à 20 milliards de dollars. De quoi se consolider face aux TPU de Google ? En tout cas, pour le CEO de Groq, leurs puces sont particulièrement intéressantes pour l'inférence, là où les GPU de NVIDIA le sont plus pour l'entraînement et forment donc une bonne complémentarité.
+**SOURCES :** 
+- https://www.linkedin.com/posts/arnaudformationia_nvidia-rach%C3%A8te-groq-pas-grok-lia-de-musk-activity-7409835339684560896-q45i?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.linkedin.com/posts/aitalk_so-thats-why-nvidia-grabbed-groq-think-activity-7410564918417993728-2ZLD?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** M&A
+**TITRE :** Alphabet (Google) achète Intersect Power pour 4.75B$
+**DESCRIPTION :** Alphabet, l'entreprise mère de Google, vient d'acheter une entreprise de production d'énergie, pour 4.75B$. Cette acquisition va permettre à Google d'être toujours plus indépendant de le domaine de l'IA, pouvant également contrôler la génération d'énergie pour ses datacenters dorénavant (en plus de faire ses propres puces, ses datacenters, ses modèles, sa distribution...). Les parcs devraient être entièrement opérationnels d'ici 2027.
+**SOURCES :** 
+- https://techcrunch.com/2025/12/22/alphabet-to-buy-intersect-power-to-bypass-energy-grid-bottlenecks/
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** M&A
+**TITRE :** Meta achète Manus pour 2B$
+**DESCRIPTION :** Il s'agit de loin de l'information que j'ai le plus vu tourner sur LinkedIn récemment ! Manus, c'est une entreprise chinoise connue pour le développement d'agents IA et l'automatisation de tâches, qui a  un chiffre d'affaires annuel de plus de 100M$... alors même que l'entreprise a été créée en mars ! Meta vient de débourser 2B$ pour en faire l'acquisition. Un choix très intéressant qui pourrait structurer l'offre de Meta tant dans leurs produits existants que pour le développement de produits pouvant leur faire véritablement gagner de l'argent. Et une orientation vers le besoin de packaging/features agentiques plutôt que sur l'optimisation de LLM (ce que Meta semble avoir abandonné depuis le flop de Llama 4... du moins pour 2025 !). 
+**SOURCES :** 
+- https://manus.im/blog/manus-joins-meta-for-next-era-of-innovation
+- https://www.facebook.com/business/news/manus-joins-meta-accelerating-ai-innovation-for-businesses
+- https://techcrunch.com/2025/12/29/meta-just-bought-manus-an-ai-startup-everyone-has-been-talking-about/
+- https://www.linkedin.com/posts/maxime-derian_roi-qwen-agent-activity-7411701881938333696-zoMc?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.linkedin.com/posts/aitalk_meta-just-dropped-4-5b-on-manus-an-ai-startup-activity-7411645158049427457-PNgL?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.linkedin.com/posts/alexandre-dos-santos-78604810b_manus-meta-agenticai-activity-7411769808918298624-XXgZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** M&A
+**TITRE :** Microsoft achète Osmos
+**DESCRIPTION :** Osmos est une entreprise fondée en 2019, spécialisée initialement dans la gestion automatisée de la donnée, du nettoyage à l'ingestion. Depuis la sortie des LLM, ils ont travaillé sur le déploiement de pipelines et l'automatisation d'entraînement de modèles. L'entreprise est dorénavant intégrée à Microsoft Fabric, afin de développer des outils d'IA agentique dédiés au data engineering.
+**SOURCES :**
+- https://www.linkedin.com/posts/philippelimantour_microsoft-osmos-data-activity-7413999892026675200-UH5_?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://blogs.microsoft.com/blog/2026/01/05/microsoft-announces-acquisition-of-osmos-to-accelerate-autonomous-data-engineering-in-fabric/
+- https://www.osmos.io/
+- https://www.channelnews.fr/microsoft-rachete-osmos-pour-renforcer-le-traitement-automatise-des-donnees-dans-fabric-153795
+
+#############
+## Conseil ##
+#############
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Conseil
+**TITRE :** TCS a réalisé 5% de son CA de 2025 sur l'IA
+**DESCRIPTION :** Avec une croissance de 16.3% par TRIMESTRE, les missions IA ont rapporté 5% du chiffre d'affaires de TCS (Tata Consultancy Services, la 2e ESN mondiale après Accenture). Au vu de la croissance sur cette typologie de missions (plus 5500 en 2025), TCS espère pouvoir dépasser Accenture ainsi. D'ailleurs, à cette fin, 97% de leurs développeurs ont dorénavant des licences pour des outils de code par IA.
+**SOURCES :** 
+- https://timesofindia.indiatimes.com/technology/tech-news/tcs-quantifies-its-ai-business-for-first-time-ceo-k-krithivasan-says-ai-revenue-is-now-/articleshow/126103834.cms
+- https://www.linkedin.com/posts/brunoquilghini_tata-consultancy-services-la-deuxi%C3%A8me-esn-activity-7410952810390835200-VE_F?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+###############
+## Stratégie ##
+###############
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Stratégie
+**TITRE :** SalesForce souhaite réduire son utilisation de LLM
+**DESCRIPTION :** Bien que SalesForce a "davantage confiance dans les LLM qu'il y a un an", tant le coût que le caractère aléatoire des LLM sont des freins à leur déploiement dans les outils SalesForce. L'entreprise va donc réorienter ses offres vers des automatisation plus déterministes et moins consommatrices de tokens.
+**SOURCES :** 
+- https://www.bfmtv.com/tech/intelligence-artificielle/un-caractere-aleatoire-inherent-le-mastodonte-des-logiciels-pour-professionnels-salesforce-va-reduire-la-voilure-sur-les-grands-modeles-de-langage_AV-202512300283.html
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Stratégie
+**TITRE :** OpenAI serait en train de réinventer... le crayon !
+**DESCRIPTION :** Dépasser le smartphone et inventer un nouvel outil de tous les jours intégrant l'IA dans notre quotidien encore plus finement ? OpenAI a recruté il y a quelques mois Jony Ive, précédemment à la tête de l'équipe design d'Apple. Son objectif serait de concevoir un nouveau produit à répandre dans toutes les mains et réinventant l'interface homme-machine, tel le smartphone à son époque, qui exploiterait les fonctionnalités de l'IAG pour l'intégrer encore plus dans la vie quotidienne. Des leaks et achats d'OpenAI sembleraient indiquer que le concept serait un crayon.
+**SOURCES :** 
+- https://www.linkedin.com/posts/andreashorn1_%F0%9D%97%A2%F0%9D%97%BD%F0%9D%97%B2%F0%9D%97%BB%F0%9D%97%94%F0%9D%97%9C%F0%9D%98%80-%F0%9D%97%B3%F0%9D%97%B6%F0%9D%97%BF%F0%9D%98%80%F0%9D%98%81-%F0%9D%97%94%F0%9D%97%9C-%F0%9D%97%B1%F0%9D%97%B2%F0%9D%98%83%F0%9D%97%B6%F0%9D%97%B0%F0%9D%97%B2-activity-7412763149726121984-OUrV?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+-  https://www.msn.com/en-us/news/technology/the-upcoming-openai-gadget-may-take-the-form-of-a-smart-pen-and-recorder-per-a-new-leak/ar-AA1TmilF
+- https://www.androidauthority.com/openai-jony-ive-hardware-pen-3628586/
+- https://www.techradar.com/ai-platforms-assistants/openai/openais-mysterious-chatgpt-gadget-could-take-the-form-of-an-ai-powered-pen
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Stratégie
+**TITRE :** Meta travaillerait sur de nouveaux modèles de vidéo et d'image... mais aussi de texte
+**DESCRIPTION :** "Mango", c'est le nom de code du prochain modèle d'image ET de vidéo de Meta, qui devrait arriver premier semestre 2026. Après les performances exceptionnelles de ses modèles SAM, nous pouvons attendre une bonne surprise de ce côté. Mais ce n'est pas tout ! Meta travaillerait aussi sur "Avocado", un modèle de... texte. Après l'échec de Llama 4, Meta semblait avoir mis les LLM au placard. Mais peut-être que le départ de leur directeur IA Yann LeCun, connu pour ne pas aimer la piste des LLM, et l'arrivée d'Alexandr Wang (cofondateur de Scale AI, racheté par Meta) ont permis de repartir en ce sens ?
+**SOURCES :**
+- https://techcrunch.com/2025/12/19/meta-is-developing-a-new-image-and-video-model-for-a-2026-release-report-says/
+- https://www.wsj.com/tech/ai/meta-developing-new-ai-image-and-video-model-code-named-mango-16e785c7?mod=hp_listc_pos2
+
+
+##############
+## Economie ##
+##############
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Economie
+**TITRE :** Le prix des GPU pourrait augmenter de 150% à partir du mois prochain
+**DESCRIPTION :** Des rapports et rumeurs semblent indiquer que le prix de cartes graphiques tant chez NVIDIA que chez AMD pourrait drastiquement augmenter à partir de février. Aucune communication de ces fournisseurs à ce sujet pour l'instant.
+**SOURCES :**
+- https://mobile.newsis.com/view/NISX20251229_0003458273#_endPass
+- https://www.instagram.com/p/DTGGTX4EeS_/
+- https://www.reddit.com/r/TwoBestFriendsPlay/comments/1q22t5l/amd_and_nvidia_will_reportedly_raise_gpu_prices/?tl=fr
+- https://www.linkedin.com/posts/evolving-ai_nvidia-and-amd-are-reportedly-set-to-increase-activity-7412834061116665856-W4fe?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Economie
+**TITRE :** La bulle de l'IA expliquée en profondeur
+**DESCRIPTION :** Finary présente dans une vidéo de 25 minutes une synthèse des différents études ayant été publiées sur la bulle de l'IA, listant un certain nombre d'acteurs pour donner une vision raisonnable du marché et conclut avec 3 scénarios d'évolution sur les 5 prochaines années. 300k vues et des commentaires dithyrambiques pour une des meilleures vidéos sur le sujet... en français ! Attention cependant à quelques limites, comme par exemple une vision non exhaustive de tous les acteurs (peu/pas de mention d'acteurs comme Anthropic, IBM ou un bon nombre de chinois). 
+**SOURCES :**
+- https://www.youtube.com/watch?v=tzurC3zFlw0
+
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Economie
+**TITRE :** La consommation grand public des LLM en 2025
+**DESCRIPTION :** a16z a publié une revue de l'évolution de l'utilisation des principaux providers américains de LLM (ChatGPT, Gemini, Claude, Grok, Meta et Perplexity) auprès des consommateurs. ChatGPT mène toujours la danse, mais Gemini remonte significativement ! De plus, la vitesse d'évolution des utilisateurs payants de Gemini est deux fois plus rapide que celle de ChatGPT.
+**SOURCES :**
+- https://a16z.com/state-of-consumer-ai-2025-product-hits-misses-and-whats-next/

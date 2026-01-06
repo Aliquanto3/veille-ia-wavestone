@@ -1,0 +1,120 @@
+# GOUVERNANCE
+
+################
+## Evaluation ##
+################
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** Evaluation
+**TITRE :** Nouveau benchmark : Berkeley Function-Calling Leaderboard"
+**DESCRIPTION :** L'IA agentique nécessite des capacités différentes comme le suivi d'instructions, la capacité à résoudre des problèmes mais aussi en particulier l'appel d'outils. De nouveaux benchmarks apparaissent donc pour évaluer les capacités agentiques, comme le BFCL pour vérifier que les modèles appellent correctement les outils dont ils ont besoin. En l'état, les modèles Claude 4.5 sont au sommet du leaderboard.
+**SOURCES :**
+- https://www.linkedin.com/posts/alexandre-dos-santos-78604810b_bfcl-agenticai-functioncalling-activity-7408506042105503744-nY9S?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://gorilla.cs.berkeley.edu/leaderboard.html
+
+#########
+## RSE ##
+#########
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** RSE
+**TITRE :** Un café au Japon emploie des personnes à mobilité réduite grâce à des robots
+**DESCRIPTION :** A Tokyo, le "DAWN Avatar Robot Cafe" dispose de multiples robots pour servir leurs clients. Plot twist ? Les robots ont tous un pilote... qui est une personne à mobilité réduite, profitant du robot pour travailler en tant que serveur directement depuis chez eux.
+**SOURCES :**
+- https://www.linkedin.com/posts/evolving-ai_in-tokyo-a-caf%C3%A9-is-offering-a-new-way-activity-7409208007563317248-aIMe?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** RSE
+**TITRE :** Le "slop" attaque YouTube en tant que business rentable
+**DESCRIPTION :** Les vidéos générées par IA, de qualité plus ou moins douteuse, se répandent à haute vitesse sur YouTube car c'est un business assez rentable tant que des vues ont lieu. Dans "Le dessous des images", Arte présente en 10 minutes comment et pourquoi ces vidéos sont créées, mais aussi quelles conséquences ça a sur l'expérience utilisateur.
+**SOURCES :** 
+- https://www.youtube.com/watch?v=mqEnhLnGffQ
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** RSE
+**TITRE :** L'IA au service de la religion en tant qu'outil de divertissement
+**DESCRIPTION :** Les évangéliques américains, toujours à la pointe des nouvelles méthodes de communication, se lancent dans l'IA générative pour attirer et convertir les foules. Dernière technique en date : générer des vidéos de "bande-annonce" de la Bible. Dans "Le dessous des images", Arte présente en 10 minutes comment elles sont conçues et le lien avec les méthodes de divertissement et marketing.
+**SOURCES :** 
+- https://www.youtube.com/watch?v=mymFcHYxwDM
+
+###################
+## Cybersécurité ##
+###################
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** Cybersécurité
+**TITRE :** Un Endpoint imprévu généré par IA cause une fuite de données
+**DESCRIPTION :** Une fintech a réalisé que des attaquants réussissaient à extraire des données personnelles de leur système… depuis un Endpoint qui n'était pas supposé exister ! Après enquête, ils ont réalisé que GitHub Copilot avait ajouté 3 semaines plus tôt cet Endpoint… Assurez-vous de bien faire valider le code par un humain de le pousser.
+**SOURCES :** 
+- https://www.linkedin.com/posts/korben_api-fant%C3%B4me-quand-lia-cr%C3%A9e-des-backdoors-activity-7409239387802144768-Eg3q?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://dzone.com/articles/security-risks-in-ai-generated-code
+
+################
+## Conformité ##
+################
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** Conformité
+**TITRE :** La Chine veut réguler les IA simulant des personnalité et émotions
+**DESCRIPTION :** Afin d'assurer la sécurité de ses utilisateurs et prévenir les addictions, la Chine souhaite réguler les chatbots pouvant avoir un comportement trop "humain". Les fournisseurs de tels services auraient de nouvelles responsabilités et devront évaluer le niveau émotionnel de leurs utilisateurs afin de prendre des mesures en cas de besoin. Bien entendu, générer des éléments mettant en danger la sécurité nationale sera aussi interdit... (tout comme la promotion de la violence, de la vulgarité ou des rumeurs d'ailleurs)
+**SOURCES :** 
+- https://www.reuters.com/world/asia-pacific/china-issues-drafts-rules-regulate-ai-with-human-like-interaction-2025-12-27/
+- https://www.linkedin.com/posts/matthieu-polaina-4385891b1_ia-aiact-transparence-activity-7411081626450964480-FNwz?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** Conformité
+**TITRE :** La France attaque Grok en justice pour contenus à caractère sexiste et sexuel
+**DESCRIPTION :** 3 ministres français ont saisi le parquet afin d'attenter une action en justice. En effet, l'IAG sur xAI a servi à dénuder en un prompt de nombreuses personnes... y compris mineures. D'autres entités telles que l'Arcom (le "gendarme audiovisuel") et Pharos (pour les escroqueries sur Internet) ont aussi été saisies. Le parquet rappelle d'ailleurs que « Le délit de montage à caractère sexuel d’une personne sans son consentement est puni de deux ans d’emprisonnement et de 60 000 euros d’amende ». Vous voulez voir ce que ça donne en pratique ? Allez, dans un lien X en source, vous verrez Musk ravi de finir en bikini.
+**SOURCES :** 
+- https://presse.economie.gouv.fr/reaction-du-gouvernement-concernant-la-generation-par-grok-lia-generative-de-x-de-contenus-a-caractere-sexiste-et-sexuel/
+- https://www.lemonde.fr/pixels/article/2026/01/02/enleve-lui-ses-vetements-l-intelligence-artificielle-grok-detournee-pour-denuder-des-femmes-et-des-mineurs-sur-x_6660363_4408996.html
+- https://www.linkedin.com/posts/ong-johnson-a64633bb_as-a-tech-and-privacy-lawyer-i-never-imagined-activity-7413095812358025216-2hi3?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://www.readtpa.com/p/grok-cant-apologize-grok-isnt-sentient
+- https://x.com/grok/status/2007084406817652848?s=20
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** Conformité
+**TITRE :** Retour sur les dates et thèmes clés de la gouvernance IA en 2025
+**DESCRIPTION :** Olivet Patel, responsable de la gouvernance IA chez AstraZeneca, a publié sa revue de la gouvernance IA en 2025, incluant 70 annonces (avec liens), les 8 grands thèmes de l'année et une infographie des dates clés. Les 8 thèmes retenus sont : 
+⦁	EU AI Act compliance becomes a reality.
+⦁	But the Brussels effect remains limited.
+⦁	Divergent approaches at the U.S. federal and state level.
+⦁	Foundation models remain the target of AI regulations and standards.
+⦁	Increasing focus on how to implement labelling and marking of AI-generated content.
+⦁	Soft law, technical standards, and public-private sector collaboration prevail.
+⦁	Lots of discussion, but less tangible action on the international stage.
+⦁	The U.S.-China “AI race” and the shifting sands of AI export controls. 
+**SOURCES :** 
+- https://oliverpatel.substack.com/p/ai-governance-in-2025-a-year-in-review
+- https://www.linkedin.com/posts/oliver-patel_ive-just-published-ai-governance-in-2025-activity-7413207039520288769-tyS1?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** Conformité
+**TITRE :** OpenAI inaccessible aux moins de 13 ans... sauf dans des peluches ?
+**DESCRIPTION :** La politique d'OpenAI interdit l'accès de ChatGPT aux enfants. Cependant, comment appliquer concrètement cette politique ? En effet, l'entreprise FoloToy a commercialisé un ours en peluche, Kumma, qui est connecté à ChatGPT. Problème : le jouet permettait de répondre à des questions sur des allumettes, couteaux, pilules, objets sexuels... Le fabricant a entre-temps retiré sa peluche de la commercialisation. Mais cela pose question pour la mise à disposition future d'IA à l'interface des enfants : quels gardes-fous implémenter, quelle législation, quelle responsabilité ?
+**SOURCES :**
+- https://www.theverge.com/ai-artificial-intelligence/846573/ai-toys-built-on-openais-chatgpt-inappropriate-content-senators-letter
+- https://www.linkedin.com/posts/activity-7410337450113380352-PyVg?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+- https://fr.ign.com/chatgpt/82800/news/quand-un-animal-en-peluche-devient-trop-dangereux-avec-son-ia
+- https://folotoy.com/
+
+########
+## RH ##
+########
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** RH
+**TITRE :** Face aux élèves assistés par IA… les oraux sont maintenant réalisés par des IA
+**DESCRIPTION :** A la Stern School of Business (New-York), un professeur de Product Management IA fait maintenant passer des oraux pour limiter l'assistance de l'IA pour les étudiants, après qu'une quantité d'excellents devoirs aient été rendus… sans que les étudiants ne puissent expliquer leur raisonnement à l'oral. De plus, il était compliqué d'évaluer les compétences personnelles dans les travaux de groupe. Heureusement, pour suivre la compréhension et le raisonnement en temps réel d'un étudiant, on peut leur faire passer des oraux ! Avantage supplémentaire : les questions sont à nouveau générées chaque fois, pas de risque que le sujet exact soit partagé à l'avance. Cependant, la logistique de tels examens est extrêmement lourde… jusqu'à ce qu'on les fasse passer en simultané sans nécessiter de professeur humain ! En se basant sur les agents IA conversationnels d'ElevenLabs, ce professeur a pu faire passer des examens oraux à ses 36 étudiants pour… 15$. L'article complet donne plus de détails sur ce qui a bien marché ou non, les résultats précis et les pistes d'amélioration. Une nouvelle opportunité pour la gestion des compétences en entreprise ou l'organisation du recrutement ?
+**SOURCES :**
+- https://www.behind-the-enemy-lines.com/2025/12/fighting-fire-with-fire-scalable-oral.html?m=1
+- https://www.linkedin.com/posts/fredcavazza_fighting-fire-with-fire-scalable-oral-exams-activity-7413857290341990400-aSGn?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
+**CATEGORIE :** Gouvernance
+**SOUS-CATEGORIE :** RH
+**TITRE :** L'université de Genève remplace sa faculté d'informatique par un centre d'IA
+**DESCRIPTION :** Après suffisamment d'annonces sur le remplacement des développeurs par l'IA, même les universités révisent profondément leurs parcours ! En particulier, celle de Genève n'accepte dorénavant plus d'admission en Bachelor ou Master de systèmes d'informations ou services digitaux. L'objectif est de créer une nouvelle formation à la place, concentrée sur l'intelligence artificielle, qui viendra remplacer le Centre Universitaire d'Informatique en cours de dissolution. Cependant, bien que les étudiants en cours d'étude ne seront pas impactés, des manifestations de ces dits étudiants actuels ont lieu pour s'opposer à cette transformation. Dans quelques années, y aura-t-il toujours des compétences en informatique disponibles sur le marché, ou seront-elles uniquement concentrées sur l'IA ? Et quelle sera le marché de l'emploi pour de tels profils ? 
+**SOURCES :**
+- https://www.swissinfo.ch/eng/swiss-ai/university-of-geneva-dissolves-it-centre-and-creates-ai-platform/90665695
+- https://www.linkedin.com/posts/tinavanheerden_for-years-weve-been-told-that-programmers-activity-7408125236690296833-l6La?utm_source=share&utm_medium=member_desktop&rcm=ACoAACLcS_8B2D9xkE2p6RvxoOPp_HM8CT4JqHQ
+
