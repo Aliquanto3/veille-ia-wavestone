@@ -2,5 +2,4 @@ __pycache__/
 venv/
 .env
 outputs/
-*.html
 .DS_Store
