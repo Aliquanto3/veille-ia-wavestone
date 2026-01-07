@@ -15,7 +15,7 @@ import argparse
 from dataclasses import dataclass, field, asdict
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import List, Optional, Dict, Set, Any
+from typing import List, Optional, Dict, Set, Any, Tuple
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 
@@ -243,6 +243,47 @@ class MistralEnhancer:
         except Exception as e:
             print(f"      -> Erreur parsing JSON: {e}")
             return batch
+        
+    def generate_teams_report(self, items: List[NewsItem], date_range: str) -> str:
+        """
+        Génère une synthèse globale de la veille pour diffusion sur Microsoft Teams.
+        Traite uniquement les titres et catégories pour optimiser la consommation de tokens.
+        """
+        print("📢 Génération du message de teasing Teams...")
+        
+        # On ne transmet que l'essentiel pour la synthèse globale
+        summary_data = [
+            {"cat": item.category, "sub": item.sub_category, "title": item.title}
+            for item in items
+        ]
+
+        prompt = f"""
+        Tu es Senior AI Consultant chez Wavestone. 
+        Tu dois rédiger un message d'annonce percutant pour le canal Microsoft Teams de la practice IA.
+        
+        Données de la veille (Période : {date_range}) :
+        {json.dumps(summary_data, ensure_ascii=False)}
+
+        Consignes de rédaction :
+        1. Ton : Professionnel, expert, engageant (Senior Consultant style).
+        2. Structure :
+           - Accroche courte avec emojis.
+           - Section "À la une cette semaine" : Identifie les 3 actualités les plus stratégiques (toutes catégories confondues) et résume-les en une phrase percutante chacune.
+           - Un appel à l'action invitant à consulter le Dashboard complet.
+        3. Formatage : Utilise le Markdown compatible Teams (gras pour les noms d'entreprises ou technos).
+        
+        Réponds uniquement avec le texte du message, sans fioritures.
+        """
+
+        try:
+            response = self.client.chat.complete(
+                model=self.model,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as e:
+            print(f"⚠️ Erreur lors de la génération du message Teams : {e}")
+            return "La veille IA de la semaine est disponible sur le portail ! 🚀"
 
 # --- 4. HTML Rendering Logic ---
 
@@ -513,45 +554,130 @@ class HTMLRenderer:
 
 # --- 5. Main Execution ---
 
+def resolve_input_directory(base_input_dir: str, arg_start: str, arg_end: str) -> Tuple[Path, str, str]:
+    """
+    Détermine le dossier source et les dates.
+    Priorité 1 : Dates fournies en argument (cherche le dossier correspondant).
+    Priorité 2 : Le dossier le plus récent trouvé dans inputs/.
+    """
+    base_path = Path(base_input_dir)
+    if not base_path.exists():
+        base_path.mkdir(exist_ok=True) # Crée inputs/ si inexistant
+
+    # Cas 1 : L'utilisateur force des dates via CLI
+    if arg_start != "?" and arg_end != "?":
+        # On suppose que l'utilisateur entre des dates au format du dossier ou DD/MM
+        # Pour simplifier, on cherche si un dossier contient ces chaînes
+        potential_dir_name = f"{arg_start}_{arg_end}" # Ex: 2025-12-19_2026-01-05
+        target_path = base_path / potential_dir_name
+        
+        if target_path.exists():
+            return target_path, arg_start, arg_end
+        else:
+            print(f"⚠️ Dossier spécifique '{potential_dir_name}' introuvable. Recherche automatique...")
+
+    # Cas 2 : Recherche automatique du dossier le plus récent (format YYYY-MM-DD_YYYY-MM-DD)
+    subdirs = [d for d in base_path.iterdir() if d.is_dir()]
+    valid_dirs = []
+    
+    # Regex pour capturer les dates YYYY-MM-DD_YYYY-MM-DD
+    dir_pattern = re.compile(r"(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2})")
+
+    for d in subdirs:
+        match = dir_pattern.match(d.name)
+        if match:
+            start_date = match.group(1)
+            end_date = match.group(2)
+            valid_dirs.append((d, start_date, end_date))
+
+    if not valid_dirs:
+        # Fallback : on retourne à la racine inputs/ si pas de sous-dossiers datés
+        print("ℹ️ Aucun sous-dossier daté trouvé. Utilisation de la racine 'inputs/'.")
+        # Calcul par défaut (Lundi précédent) pour l'affichage
+        today = datetime.now()
+        curr = today - timedelta(days=today.weekday())
+        prev = curr - timedelta(weeks=1)
+        return base_path, prev.strftime("%Y-%m-%d"), curr.strftime("%Y-%m-%d")
+
+    # Tri par date de fin (la plus récente en dernier)
+    valid_dirs.sort(key=lambda x: x[2], reverse=True)
+    
+    best_dir, start, end = valid_dirs[0]
+    return best_dir, start, end
+
 def main() -> None:
     load_dotenv()
 
     # --- CLI Arguments ---
     parser = argparse.ArgumentParser(description="Générateur de Veille IA Wavestone")
-    parser.add_argument("--no-mistral", action="store_true", help="Désactiver l'enrichissement par IA (mode hors ligne/test)")
-    parser.add_argument("--save-json", action="store_true", help="Sauvegarder les données brutes intermédiaires dans outputs/")
-    parser.add_argument("-o", "--output", type=str, help="Nom du fichier HTML de sortie", default=None)
-    parser.add_argument("--title", type=str, default="🤖 Veille IA Wavestone", help="Titre principal du dashboard")
-    parser.add_argument("--subtitle", type=str, default=None, help="Sous-titre (par défaut: date de génération)")
-    parser.add_argument("--date-start", type=str, default="?", help="Date de début de la veille (ex: 01/01)")
-    parser.add_argument("--date-end", type=str, default="?", help="Date de fin de la veille (ex: 07/01)")
-    parser.add_argument("--input-dir", type=str, default="inputs", help="Dossier contenant les fichiers .txt")
+    parser.add_argument("--no-mistral", action="store_true", help="Désactiver l'IA")
+    parser.add_argument("--save-json", action="store_true", help="Debug JSON")
+    parser.add_argument("-o", "--output", type=str, help="Fichier HTML sortie", default=None)
+    parser.add_argument("--title", type=str, default="🤖 Veille IA Wavestone", help="Titre")
+    parser.add_argument("--subtitle", type=str, default=None, help="Sous-titre")
+    parser.add_argument("--date-start", type=str, default="?", help="Format YYYY-MM-DD")
+    parser.add_argument("--date-end", type=str, default="?", help="Format YYYY-MM-DD")
+    parser.add_argument("--input-dir", type=str, default="inputs", help="Dossier racine")
     
     args = parser.parse_args()
 
-    # --- Configuration ---
-    input_folder = Path(args.input_dir)
-    api_key = os.environ.get("MISTRAL_API_KEY")
+    # --- 0. CONFIGURATION DES SORTIES (NOUVEAU BLOC) ---
+    # Création de l'arborescence outputs/
+    base_output = Path("outputs")
+    dir_pages = base_output / "pages"           # Pour les HTML
+    dir_json = base_output / "TexteMistral"     # Pour les JSON
+    dir_teams = base_output / "Teams"           # Pour les TXT
 
+    # On crée tous les dossiers d'un coup (parents=True crée 'outputs' si besoin)
+    for d in [dir_pages, dir_json, dir_teams]:
+        d.mkdir(parents=True, exist_ok=True)
+
+    # --- 1. Résolution du dossier source et des dates ---
+    input_folder_root = args.input_dir
+    target_folder, final_start_date, final_end_date = resolve_input_directory(
+        input_folder_root, args.date_start, args.date_end
+    )
+    
+    print(f"📂 Dossier source : {target_folder}")
+    print(f"📅 Période détectée : {final_start_date} au {final_end_date}")
+
+    # --- 2. Préparation des formats de dates ---
+    try:
+        d_s_obj = datetime.strptime(final_start_date, "%Y-%m-%d")
+        d_e_obj = datetime.strptime(final_end_date, "%Y-%m-%d")
+        display_date_range = f"Semaine du {d_s_obj.strftime('%d/%m')} au {d_e_obj.strftime('%d/%m')}"
+        file_date_start = d_s_obj.strftime('%d-%m')
+        file_date_end = d_e_obj.strftime('%d-%m')
+    except ValueError:
+        display_date_range = f"Période : {final_start_date} au {final_end_date}"
+        file_date_start = final_start_date.replace('/', '-')
+        file_date_end = final_end_date.replace('/', '-')
+
+    # --- Configuration API ---
+    api_key = os.environ.get("MISTRAL_API_KEY")
     if not args.no_mistral and not api_key:
-        print("⚠️  Attention: Pas de clé API trouvée. Passage forcé en mode --no-mistral.")
+        print("⚠️  Pas de clé API. Mode --no-mistral forcé.")
         args.no_mistral = True
 
     # --- Parsing ---
     news_parser = NewsParser()
     all_items: List[NewsItem] = []
 
-    if not input_folder.exists():
-        print(f"❌ Erreur: Dossier '{input_folder}' introuvable.")
+    if not target_folder.exists():
+        print(f"❌ Erreur: Dossier '{target_folder}' introuvable.")
         return
 
     print(f"--- Démarrage de la Veille IA ---")
-    txt_files = list(input_folder.glob("*.txt"))
+    txt_files = list(target_folder.glob("*.txt"))
+    
+    if not txt_files:
+         print(f"⚠️ Aucun fichier .txt trouvé dans {target_folder}")
+         return
+
     for file_path in txt_files:
         print(f"📖 Parsing de {file_path.name}...")
         items = news_parser.parse_file(file_path)
         all_items.extend(items)
-        print(f"   -> {len(items)} articles.")
 
     if not all_items:
         print("Aucun article trouvé.")
@@ -561,39 +687,42 @@ def main() -> None:
     if not args.no_mistral:
         enhancer = MistralEnhancer(api_key=api_key)
         all_items = enhancer.enhance_items(all_items)
+        
+        teams_message = enhancer.generate_teams_report(all_items, display_date_range)
+        
+        # Sauvegarde TXT dans outputs/Teams
+        teams_filename = f"Annonce_Teams_du_{file_date_start}_au_{file_date_end}.txt"
+        teams_path = dir_teams / teams_filename
+        
+        with open(teams_path, "w", encoding="utf-8") as f:
+            f.write(teams_message)
+            
+        # On garde une copie à la racine pour le bot GitHub Actions (facultatif mais pratique)
+        with open("teams_announcement.txt", "w", encoding="utf-8") as f:
+            f.write(teams_message)
+        
+        print(f"✅ Message Teams sauvegardé dans : {teams_path}")
+
     else:
         print("⏩ Mode No-Mistral actif : saut de l'étape d'enrichissement.")
 
     # --- Save JSON (Debug) ---
     if args.save_json:
-        output_dir = Path("outputs")
-        output_dir.mkdir(exist_ok=True)
-        json_path = output_dir / f"debug_items_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        # Sauvegarde JSON dans outputs/TexteMistral
+        json_filename = f"debug_items_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        json_path = dir_json / json_filename
+        
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump([item.to_dict() for item in all_items], f, indent=4, ensure_ascii=False)
         print(f"💾 Données JSON sauvegardées dans : {json_path}")
 
-    # --- Rendering (Date Calculation Logic) ---
-    # Calcul automatique des dates par défaut
-    today = datetime.now()
-    # Trouver le lundi de la semaine en cours (0 = Lundi, 6 = Dimanche)
-    current_monday = today - timedelta(days=today.weekday())
-    # Trouver le lundi de la semaine précédente
-    previous_monday = current_monday - timedelta(weeks=1)
-
-    # Si l'utilisateur n'a pas spécifié de date (valeur par défaut "?"), on utilise le calcul auto
-    d_start = args.date_start if args.date_start != "?" else previous_monday.strftime("%d/%m")
-    d_end = args.date_end if args.date_end != "?" else current_monday.strftime("%d/%m")
-    
-    date_range_str = f"Semaine du {d_start} au {d_end}"
-    
-    # Gestion du sous-titre par défaut
+    # --- Rendering ---
     if args.subtitle:
         final_subtitle = args.subtitle
     else:
-        final_subtitle = f"Généré le {today.strftime('%d/%m/%Y')} • {len(all_items)} actualités"
+        final_subtitle = f"Généré le {datetime.now().strftime('%d/%m/%Y')} • {len(all_items)} actualités"
     
-    renderer = HTMLRenderer(title=args.title, subtitle=final_subtitle, date_range=date_range_str)
+    renderer = HTMLRenderer(title=args.title, subtitle=final_subtitle, date_range=display_date_range)
     html_content = renderer.render(all_items)
     
     if args.output:
@@ -602,10 +731,13 @@ def main() -> None:
     else:
         output_filename = f"Veille_IA_{datetime.now().strftime('%Y-%m-%d')}.html"
 
-    with open(output_filename, "w", encoding="utf-8") as f:
+    # Sauvegarde HTML dans outputs/pages
+    final_output_path = dir_pages / output_filename
+
+    with open(final_output_path, "w", encoding="utf-8") as f:
         f.write(html_content)
 
-    print(f"\n🚀 Succès ! Dashboard généré : {output_filename}")
+    print(f"\n🚀 Succès ! Dashboard généré : {final_output_path}")
 
 if __name__ == "__main__":
     main()

@@ -1,139 +1,110 @@
 # 🤖 Veille IA Generator - Wavestone
 
-Ce projet est un outil d'automatisation destiné à la cellule de veille IA de Wavestone. Il permet de transformer des notes de veille brutes (fichiers texte) en un **Dashboard HTML interactif et cognitif**, enrichi par l'IA générative (Mistral Large).
+Ce projet est une suite d'outils d'automatisation destinée aux consultants IA de Wavestone. Il transforme des notes de veille brutes en un **Dashboard HTML interactif**, enrichi par **Mistral Large 3**, et maintient un **Portail d'Archives** organisé.
 
 ## 🎯 Objectifs
 
-L'objectif est de réduire la friction cognitive pour les consultants lors de la consommation de la veille technologique :
-1.  **Centralisation** : Agréger des sources multiples (Tech, Gouvernance, Marché) en un point unique.
-2.  **Expérience Utilisateur (UX)** : Offrir une interface de type "Kanban" avec filtres dynamiques et moteur de recherche instantané, plutôt qu'un document linéaire.
-3.  **Enrichissement Cognitif** : Utiliser un LLM (Mistral AI) pour corriger, formater (gras, italique) et structurer l'information automatiquement, garantissant une lisibilité maximale.
-4.  **Portabilité** : Générer un fichier HTML "Single Page Application" (SPA) autonome, partageable via Teams/Email sans serveur ni authentification complexe.
+1.  **Industrialisation** : Automatisation complète du parsing, de l'enrichissement et du déploiement.
+2.  **Expérience Utilisateur (UX)** : Interface "Kanban" filtrable, responsive, avec "Copy for Teams" et mode sombre.
+3.  **Productivité** : Génération automatique d'un message d'annonce ("Teasing") pour Microsoft Teams, rédigé par l'IA.
+4.  **Archivage Structuré** : Séparation nette entre les pages Web, les textes d'annonces et les logs de debug.
 
-## 🏗 Architecture Technique
+## 🏗 Architecture du Projet
 
-Le projet suit une approche **OOP (Orientée Objet)** et modulaire, respectant les standards de qualité Python (Type Hinting strict, PEP 8).
+Le projet suit une structure stricte pour garantir la maintenabilité :
 
-* **`NewsParser`** : Responsable de l'ingestion. Lit les fichiers `.txt` dans le dossier `inputs/`, nettoie les balises et structure les données via des Regex.
-* **`MistralEnhancer`** : Responsable de la couche cognitive. Utilise l'API Mistral en mode **Batch** pour traiter plusieurs actualités simultanément (optimisation de la latence et des quotas). Force le formatage JSON pour la stabilité.
-* **`HTMLRenderer`** : Responsable de la présentation. Génère le DOM HTML/CSS/JS. Intègre la logique de filtrage (catégories/sous-catégories) et l'interactivité client-side.
-* **Modèle de données** : Utilisation de `dataclasses` pour garantir l'intégrité des objets `NewsItem`.
+```text
+.
+├── inputs/
+│   └── 2026-01-05_2026-01-12/      <-- Dossier hebdomadaire (Source)
+│       ├── Marché.txt
+│       └── Tech.txt
+│
+├── outputs/                        <-- Dossier de génération (Destination)
+│   ├── pages/                      <-- Dashboards HTML (Publiés)
+│   │   └── Veille_IA_2026-01-12.html
+│   ├── Teams/                      <-- Messages d'annonces (Publiés)
+│   │   └── Annonce_Teams_du_05-01...txt
+│   └── TexteMistral/               <-- Logs JSON bruts (Ignorés par Git)
+│
+├── index.html                      <-- Portail d'accueil (Racine)
+├── generate_veille.py              <-- Moteur de génération
+├── generate_portal.py              <-- Gestionnaire du portail
+└── requirements.txt
+```
 
-## ⚙️ Pré-requis
+## ⚙️ Installation
 
-* **Python** : 3.10 ou supérieur.
-* **API Key** : Une clé API valide pour [Mistral Platform](https://console.mistral.ai/).
-
-## 🚀 Installation
-
-1.  **Cloner le projet**
+1.  **Cloner et préparer l'environnement**
     ```bash
     git clone [https://github.com/votre-repo/veille-ia-wavestone.git](https://github.com/votre-repo/veille-ia-wavestone.git)
     cd veille-ia-wavestone
-    ```
-
-2.  **Créer un environnement virtuel (Recommandé)**
-    ```bash
     python -m venv venv
-    # Windows
-    venv\Scripts\activate
-    # Mac/Linux
-    source venv/bin/activate
-    ```
-
-3.  **Installer les dépendances**
-    ```bash
+    # Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate
     pip install -r requirements.txt
     ```
-    *Dépendances principales : `mistralai`, `python-dotenv`.*
 
-## 🔧 Configuration
-
-1.  **Variables d'environnement**
-    Créez un fichier `.env` à la racine du projet et ajoutez votre clé API :
+2.  **Configuration API**
+    Créez un fichier `.env` à la racine :
     ```env
     MISTRAL_API_KEY="votre_cle_api_ici"
     ```
 
-2.  **Dossier d'entrées**
-    Assurez-vous que le dossier `inputs/` existe à la racine. Placez-y vos fichiers de veille bruts (format `.txt`).
-    *Exemple : `inputs/Tech.txt`, `inputs/Gouvernance.txt`.*
+## 📝 Format des Inputs
 
-    > **Format des fichiers .txt** :
-    > Le script attend des marqueurs spécifiques (`**CATEGORIE :**`, `**TITRE :**`, etc.). Voir les fichiers d'exemple fournis.
-
-## ▶️ Utilisation
-
-Lancez simplement le script principal :
-
-```bash
-python generate_veille.py
-```
-
-**Le workflow s'exécute en 3 étapes :**
-1.  **Parsing** : Lecture de tous les fichiers `.txt` présents dans `inputs/`.
-2.  **Enhancement** : Envoi des données par lots (batchs de 10) à Mistral Large pour réécriture et formatage HTML.
-3.  **Rendering** : Génération du fichier final `Veille_IA_Enhanced_YYYY-MM-DD.html`.
-
-Ouvrez le fichier HTML généré dans votre navigateur pour consulter la veille.
-
-## 🎛 Usage Avancé (Ligne de commande)
-
-Le script supporte désormais de nombreux arguments pour personnaliser la génération sans toucher au code :
-
-| Argument | Description | Exemple |
-| :--- | :--- | :--- |
-| `--no-mistral` | Génère le HTML sans appeler l'IA (Rapide & Gratuit) | `python generate_veille.py --no-mistral` |
-| `--save-json` | Sauvegarde les données traitées dans un dossier `outputs/` | `python generate_veille.py --save-json` |
-| `-o`, `--output` | Choisir le nom du fichier HTML de sortie | `-o "Veille_Semaine_42.html"` |
-| `--title` | Personnaliser le grand titre du Dashboard | `--title "Veille Banque & Assurance"` |
-| `--date-start` | Date de début de la période couverte | `--date-start "06/01"` |
-| `--date-end` | Date de fin de la période couverte | `--date-end "12/01"` |
-| `--input-dir` | Changer le dossier source (défaut: `inputs`) | `--input-dir "inputs_finance"` |
-
-**Exemple complet de commande :**
-```bash
-python generate_veille.py --date-start "01/01" --date-end "07/01" --title "Revue IA Hebdo" --save-json
-```
-
-## 🛠 Personnalisation
-
-* **Modifier le modèle IA** : Dans `generate_veille.py`, classe `MistralEnhancer`, changez `model="mistral-large-latest"`.
-* **Ajuster le Batch Size** : Modifiez le paramètre `batch_size` lors de l'instanciation de l'enhancer dans le `main()` (défaut : 10).
-* **Styling (CSS)** : Le CSS est embarqué dans la classe `HTMLRenderer`. Modifiez la méthode `_get_css` pour ajuster les couleurs (Charte Wavestone).
-
-## 📝 Format des fichiers d'entrée (`inputs/*.txt`)
-
-Pour que le moteur de parsing puisse extraire correctement les données, chaque fichier `.txt` déposé dans le dossier `inputs/` doit respecter une structure stricte basée sur des marqueurs textuels spécifiques.
-
-### Structure type d'un article
+Chaque semaine, créez un dossier dans `inputs/` au format `YYYY-MM-DD_YYYY-MM-DD` (ex: `2026-01-05_2026-01-12`).
+Les fichiers `.txt` à l'intérieur doivent suivre ce format :
 
 ```text
-**CATEGORIE :** Nom de la catégorie (ex: Gouvernance)
-**SOUS-CATEGORIE :** Nom de la sous-catégorie (ex: Conformité)
+**CATEGORIE :** Marché
+**SOUS-CATEGORIE :** Stratégie
 **TITRE :** Titre de l'actualité
-**DESCRIPTION :** Texte descriptif complet. 
-Le script supporte les descriptions multi-lignes.
-Les balises de type sont automatiquement supprimées lors du traitement.
+**DESCRIPTION :** Texte descriptif.
 **SOURCES :**
-- https://lien-vers-la-source-1.com
-- https://lien-vers-la-source-2.com
+- [https://lien-source.com](https://lien-source.com)
 ```
+*Si les catégories sont manquantes, l'IA les déduira.*
 
-### Règles de validité (Parsing Regex)
+## ▶️ Workflow Hebdomadaire
 
-* **Clés de détection** : Les clés doivent être écrites exactement comme suit (gras inclus) : `**CATEGORIE :**`, `**SOUS-CATEGORIE :**`, `**TITRE :**`, `**DESCRIPTION :**` et `**SOURCES :**`.
-* [cite_start]**Nettoyage automatique** : Le script est conçu pour ignorer les métadonnées de sourcing interne comme `` présentes dans le corps du texte[cite: 10, 26, 44].
-* [cite_start]**Format des liens** : Les URLs dans la section sources doivent impérativement être précédées d'un tiret et d'un espace (`- `) pour être correctement indexées[cite: 50, 71, 142].
-* **Hiérarchie** : Une catégorie doit être déclarée au moins une fois avant les articles qui la composent. Le script conservera la dernière catégorie rencontrée pour tous les articles suivants jusqu'à la prochaine déclaration `**CATEGORIE :**`.
-* **Séparateurs** : Vous pouvez utiliser des lignes de commentaires (ex: `##########`) pour structurer vos fichiers de travail ; le parser les ignorera tant qu'elles ne contiennent pas les mots-clés réservés.
+### Option A : Automatisation GitHub (CI/CD)
+1.  Créez le dossier daté dans `inputs/` et ajoutez vos fichiers.
+2.  Commitez et poussez sur GitHub.
+3.  **L'Action GitHub** génère tout, met à jour le site et affiche le message Teams dans le résumé du Job.
 
-## 🤝 Contribution
+### Option B : Exécution Manuelle (Local)
 
-Les contributions doivent respecter les règles suivantes :
-* Typage statique strict (`mypy`).
-* Linting (`ruff` ou `flake8`).
-* Utilisation des f-strings et dataclasses.
+1.  **Lancer la génération**
+    Le script détecte automatiquement le dossier le plus récent dans `inputs/`.
+    ```bash
+    python generate_veille.py
+    ```
+    * Le HTML est créé dans `outputs/pages/`.
+    * Le message Teams est créé dans `outputs/Teams/`.
+    * Les logs JSON sont dans `outputs/TexteMistral/`.
+
+2.  **Mettre à jour le portail**
+    ```bash
+    python generate_portal.py
+    ```
+    *Scanne `outputs/pages/` et met à jour `index.html`.*
+
+3.  **Publier**
+    ```bash
+    git add .
+    git commit -m "Nouvelle veille S2"
+    git push
+    ```
+
+## 🎛 Arguments CLI (`generate_veille.py`)
+
+| Argument | Description |
+| :--- | :--- |
+| `--no-mistral` | Désactive l'IA (Rapide/Gratuit). |
+| `--save-json` | Force la sauvegarde JSON (activé par défaut si besoin de debug). |
+| `-o`, `--output` | Nom du fichier HTML final (Défaut: `Veille_IA_DATE.html`). |
+| `--date-start` | Force une date de début (cherche le dossier correspondant). |
+| `--input-dir` | Change le dossier racine des inputs (Défaut: `inputs`). |
 
 ---
-*Projet interne - Wavestone AI Practice.*
+*Projet interne - Wavestone AI & Nantes Business Units.*

@@ -1,0 +1,26 @@
+**🚀 L’IA en ébullition : innovations, régulations et stratégies qui redéfinissent le paysage**
+
+Bonjour à toutes et à tous,
+
+La période des fêtes n’a pas ralenti l’actualité IA – bien au contraire. Entre avancées technologiques majeures, mouvements stratégiques des géants et enjeux de gouvernance critiques, voici les éléments clés à retenir pour démarrer 2025 en pleine maîtrise du sujet.
+
+---
+
+### **À la une cette semaine**
+
+🔹 **NVIDIA frappe fort avec *Nemotron 3* et rachète *Groq* pour 20 Md$**
+La firme confirme sa domination avec une nouvelle famille de modèles open source **Nemotron 3**, tandis que son acquisition de **Groq** (spécialiste des puces IA) renforce son écosystème hardware – un coup de maître pour contrer les dépendances aux GPU.
+
+🔹 **La Chine accélère sa souveraineté numérique avec le *CENI* et régule les IA "émotionnelles"**
+Déploiement de son **nouvel internet national (CENI)** et projet de loi pour encadrer les IA simulant des personnalités : Pékin structure son leadership technologique tout en verrouillant les risques sociétaux.
+
+🔹 **Microsoft et OpenAI sous pression : fuites de données, conformité et limites d’âge**
+Un **endpoint généré par IA** provoque une fuite de données, la France attaque **Grok** pour contenus illicites, et **OpenAI** se retrouve dans le collimateur avec des restrictions d’âge… sauf pour ses peluches connectées. La gouvernance devient un casse-tête opérationnel.
+
+---
+
+📊 **Pour aller plus loin** : Retrouvez l’analyse complète de ces actualités et bien d’autres (benchmark **Berkeley**, deepfake géopolitique, stratégies cloud d’**Airbus**, etc.) dans notre **[Dashboard IA Hebdo](lien_vers_dashboard)** – mis à jour avec les insights de nos experts.
+
+Bonne lecture, et à la semaine prochaine pour de nouvelles pépites ! 💡
+
+*#IA #Gouvernance #Stratégie #Tech*

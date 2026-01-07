@@ -57,7 +57,7 @@ def generate_index_html(files: List[Tuple[str, str, datetime]]) -> str:
     for filename, title, date_obj in files:
         # Code couleur Wavestone pour les cartes
         links_html += f"""
-        <a href="{filename}" class="veille-card">
+        <a href="outputs/pages/{filename}" class="veille-card">
             <div class="card-icon">📅</div>
             <div class="card-content">
                 <div class="card-title">{title}</div>
@@ -131,13 +131,16 @@ def generate_index_html(files: List[Tuple[str, str, datetime]]) -> str:
     """
 
 def main():
-    # 1. Configuration
-    # Le script scanne le dossier courant (là où il est exécuté)
-    base_path = Path(".")
+    # 1. CHANGEMENT DU DOSSIER CIBLE
+    base_path = Path("outputs/pages")
     
+    if not base_path.exists():
+        print("⚠️ Le dossier 'outputs/pages' n'existe pas encore.")
+        return
+
     # 2. Récupération des fichiers
     files = get_veille_files(base_path)
-    print(f"🔎 {len(files)} archives trouvées.")
+    print(f"🔎 {len(files)} archives trouvées dans outputs/pages/.")
 
     # 3. Génération de l'index
     html_content = generate_index_html(files)

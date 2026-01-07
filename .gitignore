@@ -1,5 +1,7 @@
 __pycache__/
 venv/
 .env
-outputs/
 .DS_Store
+
+# On ignore uniquement les logs de debug (JSON)
+outputs/TexteMistral/
