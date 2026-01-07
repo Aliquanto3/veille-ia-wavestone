@@ -45,6 +45,14 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
           git add .
+          
+          # On commit (s'il y a des changements)
           git commit -m "🚀 Auto-update: Nouvelle veille générée" || echo "No changes to commit"
-          git push
+          
+          # LA CORRECTION EST ICI :
+          # On récupère les dernières modifs distantes et on applique notre commit par-dessus
+          git pull --rebase origin main
+          
+          git push origin main
