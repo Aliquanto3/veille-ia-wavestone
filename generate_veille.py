@@ -269,7 +269,7 @@ class MistralEnhancer:
         2. Structure :
            - Accroche courte avec emojis.
            - Section "À la une cette semaine" : Identifie les 3 actualités les plus stratégiques (toutes catégories confondues) et résume-les en une phrase percutante chacune.
-           - Un appel à l'action invitant à consulter le Dashboard complet.
+           - Un appel à l'action invitant à consulter le Dashboard complet (URL : https://aliquanto3.github.io/veille-ia-wavestone/).
         3. Formatage : Utilise le Markdown compatible Teams (gras pour les noms d'entreprises ou technos).
         
         Réponds uniquement avec le texte du message, sans fioritures.
@@ -691,14 +691,14 @@ def main() -> None:
         teams_message = enhancer.generate_teams_report(all_items, display_date_range)
         
         # Sauvegarde TXT dans outputs/Teams
-        teams_filename = f"Annonce_Teams_du_{file_date_start}_au_{file_date_end}.txt"
+        teams_filename = f"Annonce_Teams_du_{file_date_start}_au_{file_date_end}.md"
         teams_path = dir_teams / teams_filename
         
         with open(teams_path, "w", encoding="utf-8") as f:
             f.write(teams_message)
             
         # On garde une copie à la racine pour le bot GitHub Actions (facultatif mais pratique)
-        with open("teams_announcement.txt", "w", encoding="utf-8") as f:
+        with open("teams_announcement.md", "w", encoding="utf-8") as f:
             f.write(teams_message)
         
         print(f"✅ Message Teams sauvegardé dans : {teams_path}")
