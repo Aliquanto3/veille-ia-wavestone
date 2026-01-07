@@ -2,6 +2,8 @@
 
 Ce projet est une suite d'outils d'automatisation destinée aux consultants IA de Wavestone. Il transforme des notes de veille brutes en un **Dashboard HTML interactif**, enrichi par **Mistral Large 3**, et maintient un **Portail d'Archives** organisé.
 
+Le site web est disponible ici : [https://aliquanto3.github.io/veille-ia-wavestone/](https://aliquanto3.github.io/veille-ia-wavestone/)
+
 ## 🎯 Objectifs
 
 1.  **Industrialisation** : Automatisation complète du parsing, de l'enrichissement et du déploiement.
