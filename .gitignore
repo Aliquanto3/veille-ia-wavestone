@@ -1,7 +1,29 @@
+# Python
 __pycache__/
+*.pyc
+*.pyo
 venv/
-.env
-.DS_Store
+.venv/
 
-# On ignore uniquement les logs de debug (JSON)
+# Secrets
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs de debug (JSON bruts Mistral)
 outputs/TexteMistral/
+
+# Base de données SQLite (données locales, pas versionnées)
+data/
+
+# Pytest
+.pytest_cache/
+
+# Mypy
+.mypy_cache/

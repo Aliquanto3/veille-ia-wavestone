@@ -39,7 +39,7 @@ jobs:
       - name: Display Teams Message
         run: |
           echo "### 📢 Message Teams à copier" >> $GITHUB_STEP_SUMMARY
-          cat teams_announcement.txt >> $GITHUB_STEP_SUMMARY        
+          cat teams_announcement.md >> $GITHUB_STEP_SUMMARY        
 
       - name: Commit and Push changes
         run: |

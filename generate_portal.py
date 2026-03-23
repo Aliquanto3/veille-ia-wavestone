@@ -6,7 +6,6 @@ Description: Scanne les fichiers HTML de veille et génère une page d'accueil (
 Compatibility: Python 3.10+
 """
 
-import os
 import re
 from datetime import datetime
 from pathlib import Path
