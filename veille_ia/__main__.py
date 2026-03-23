@@ -102,13 +102,16 @@ def main() -> None:
         args.no_mistral = True
 
     if not args.no_mistral:
-        client = MistralLLMClient(api_key=api_key)
-        enhancer = NewsEnhancer(client=client)
-        all_items = enhancer.enhance_items(all_items)
+        try:
+            client = MistralLLMClient(api_key=api_key)
+            enhancer = NewsEnhancer(client=client)
+            all_items = enhancer.enhance_items(all_items)
 
-        reporter = TeamsReportGenerator(client=client)
-        teams_message = reporter.generate(all_items, display_range)
-        save_teams_message(teams_message, dir_teams, file_start, file_end)
+            reporter = TeamsReportGenerator(client=client)
+            teams_message = reporter.generate(all_items, display_range)
+            save_teams_message(teams_message, dir_teams, file_start, file_end)
+        except ImportError as e:
+            logger.warning("⚠️ SDK Mistral non disponible (%s). Enrichissement sauté.", e)
     else:
         logger.info("⏩ Mode No-Mistral : saut de l'enrichissement.")
 
