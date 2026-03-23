@@ -103,6 +103,7 @@ def main() -> None:
 
     if not args.no_mistral:
         try:
+            assert api_key is not None  # Garanti par le check ci-dessus
             client = MistralLLMClient(api_key=api_key)
             enhancer = NewsEnhancer(client=client)
             all_items = enhancer.enhance_items(all_items)

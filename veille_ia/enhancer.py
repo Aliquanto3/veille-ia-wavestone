@@ -38,8 +38,13 @@ class MistralLLMClient:
     def chat_complete(
         self, model: str, messages: List[Dict[str, str]], **kwargs: Any
     ) -> str:
-        response = self._client.chat.complete(model=model, messages=messages, **kwargs)
-        return response.choices[0].message.content
+        response = self._client.chat.complete(
+            model=model, messages=messages, **kwargs  # type: ignore[arg-type]
+        )
+        content = response.choices[0].message.content
+        if isinstance(content, str):
+            return content
+        return str(content) if content else ""
 
 
 # --- P4 : Séparation Enhancer / TeamsReportGenerator ---
